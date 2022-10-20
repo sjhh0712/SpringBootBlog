@@ -24,26 +24,26 @@ public class HttpControllerTest {
 		return "lombok test 완료";
 	}
 	
-	// http://localhost:8080/http/get (select)
+	// http://localhost:8000/http/get (select)
 	@GetMapping("/http/get")
 	public String getTest(Member m) { // id=1&username=ssar&password=1234&email=ssar@naver.com 를 m에 넣어주는 역할을 스프링이함
 		return "get 요청:" + m.getId() + ',' + m.getUsername() + ',' + m.getPassword() + ',' + m.getEmail();
 	}
 	
 	//인터넷 브라우저 요청은 무조건 get요청밖에 안됨
-	// http://localhost:8080/http/post (insert)
+	// http://localhost:8000/http/post (insert)
 	@PostMapping("/http/post")
 	public String postTest(@RequestBody Member m) {
 		return "post 요청:" + m.getId() + ',' + m.getUsername() + ',' + m.getPassword() + ',' + m.getEmail();
 	}
 	
-	// http://localhost:8080/http/put (update)
+	// http://localhost:8000/http/put (update)
 	@PutMapping("/http/put")
 	public String putTest(@RequestBody Member m) {
 		return "put 요청:" + m.getId() + ',' + m.getUsername() + ',' + m.getPassword() + ',' + m.getEmail();
 	}
 	
-	// http://localhost:8080/http/delete (delete)
+	// http://localhost:8000/http/delete (delete)
 	@DeleteMapping("/http/delete")
 	public String deleteTest() {
 		return "delete 요청";
