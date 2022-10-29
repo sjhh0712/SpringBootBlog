@@ -36,7 +36,7 @@ public class Board {
 	@Column(nullable = false, length = 100)
 	private String title;
 	
-	@Lob // 대용량 데이터
+	@Lob // 대용량 데이터 저장 시 사용. (default는 varchar(255)까지 저장이 가능하지만 이미지등과 같은 데이터는 용량이 크기때문에 Lob를 사용한다.
 	private String content; // 섬머노트 라이브러리 <html>태그가 섞여서 디자인이 됨
 	
 	@ColumnDefault("0")
