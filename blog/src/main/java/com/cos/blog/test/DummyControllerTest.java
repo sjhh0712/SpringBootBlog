@@ -32,7 +32,14 @@ public class DummyControllerTest {
 				return new IllegalArgumentException("존재하지 않는 유저입니다. id : " + id);
 			}
 		});
-		return user;
+// 		람다식으로 사용하는 방법
+//		User user = userRepository.findById(id).orElseThrow(()->{
+//			return new IllegalArgumentException("존재하지 않는 유저입니다.");
+//		});
+		
+		return user; // user 객체 = 자바 오브젝트
+		// 웹브라우저한테 user 객체를 리턴 -> 웹브라우저는 자바 오브젝트를 알아들을수 없다. -> JSON을 사용하여 변환하여 브라우저에 return
+		// 자바오브젝트 리턴시 스프링부트는 MessageConverter가 Jackson라이브러리 호출 -> user오브젝트를 JSON으로 변환하여 브라우저에게 전달
 	}
 	
 	// http://localhost:8000/blog/dummy/join (요청)
