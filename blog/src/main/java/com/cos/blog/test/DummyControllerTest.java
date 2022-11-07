@@ -23,7 +23,7 @@ import com.cos.blog.model.RoleType;
 import com.cos.blog.model.User;
 import com.cos.blog.repository.UserRepository;
 
-@RestController
+@RestController // @RestController를 사용하는 이유 : Json형식으로 객체를 반환하기 위함
 public class DummyControllerTest {
 	
 	@Autowired // 의존성 주입  ->  패키지 스캔 시 현재 컨트롤러가 메모리에 올라가는데 UserRepository는 null상태. 이걸 Autowired가 bean을 주입하여 프로퍼티 사용가능
