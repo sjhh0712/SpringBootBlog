@@ -17,7 +17,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+@Data // getter setter를 쓰겠다.
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder // 빌더 패턴
@@ -29,7 +29,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // 프로젝트에서 연결된 db의 넘버링(autoincrement) 전략을 따라간다.
 	private int id; // autoincrement
 	
-	@Column(nullable = false, length = 30)
+	@Column(nullable = false, length = 30, unique=true) // unique를 true하면 유일 값으로 설정
 	private String username; // 아이디
 	
 	@Column(nullable = false, length = 100) // length를 100이나 주는 이유는 암호화때문
